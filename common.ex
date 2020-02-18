@@ -11,7 +11,7 @@ defmodule Common do
     calculateFuelRec(requiredFuel, newFuel)
   end
 
-  # Day 2 part 1
+  # Day 2 part 1 - 2
 
   def intComputerRun(list, position) do
     code = Enum.at(list, position)
