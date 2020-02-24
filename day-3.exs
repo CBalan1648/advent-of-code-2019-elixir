@@ -14,7 +14,7 @@ splittedData =
       |> Enum.map_reduce([0, 0], &Common.mapToPoint(&1, &2))
       |> Tuple.to_list
       |> List.first
-      |> Enum.map_reduce(0, &Common.mapToLine(&1, &2))
+      |> Enum.map_reduce([0,0], &Common.mapToLine(&1, &2))
     end
   )
   

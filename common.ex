@@ -18,15 +18,17 @@ defmodule Common do
     intCodeRun(code, list, position)
   end
 
-
   def intCodeRun(code, list, position) when code == 1 do
     firstNumber = Enum.at(list, Enum.at(list, position + 1))
     secondNumber = Enum.at(list, Enum.at(list, position + 2))
     resultPosition = Enum.at(list, position + 3)
 
-    #IO.puts "PLUS" <> to_string(firstNumber) <> to_string(secondNumber) <> to_string(resultPosition)
+    # IO.puts "PLUS" <> to_string(firstNumber) <> to_string(secondNumber) <> to_string(resultPosition)
 
-    intComputerRun(List.replace_at(list, resultPosition, firstNumber + secondNumber), position + 4)
+    intComputerRun(
+      List.replace_at(list, resultPosition, firstNumber + secondNumber),
+      position + 4
+    )
   end
 
   def intCodeRun(code, list, position) when code == 2 do
@@ -34,19 +36,21 @@ defmodule Common do
     secondNumber = Enum.at(list, Enum.at(list, position + 2))
     resultPosition = Enum.at(list, position + 3)
 
-    #IO.puts "MULT" <> to_string(firstNumber) <> to_string(secondNumber) <> to_string(resultPosition)
+    # IO.puts "MULT" <> to_string(firstNumber) <> to_string(secondNumber) <> to_string(resultPosition)
 
-    intComputerRun(List.replace_at(list, resultPosition, firstNumber * secondNumber), position + 4)
+    intComputerRun(
+      List.replace_at(list, resultPosition, firstNumber * secondNumber),
+      position + 4
+    )
   end
 
   def intCodeRun(code, list, _position) when code == 99 do
-    #IO.puts "END" <> to_string(code)
+    # IO.puts "END" <> to_string(code)
     list
   end
 
   # Day 3 part 1
   def mapToPoint(value, acc) do
-
     direction = List.first(value)
     distance = List.first(Tuple.to_list(Integer.parse(List.last(value))))
 
@@ -70,10 +74,9 @@ defmodule Common do
   end
 
   def mapToLine(value, acc) do
-    
-    IO.inspect value
-    IO.inspect acc
-    
-  end
+    IO.inspect(value)
+    IO.inspect(acc)
 
+    {value, [0, 0]}
+  end
 end
